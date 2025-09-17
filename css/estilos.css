@@ -1,28 +1,24 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Bitter", serif;
   background-image: url("./../img/tanya-barrow-pQ5fb0kVYSk-unsplash.jpg");
   background-size: cover;
   background-position: top;
-
-  &::after {
-    content: "";
-    width: 2000px;
-    height: 2000px;
-    background: rgb(255, 255, 255, 0.1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(50px);
-    z-index: 0;
-  }
+  position: relative;
 }
 
+body::after {
+  content: "";
+  width: 2000px;
+  height: 2000px;
+  background: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(50px);
+  z-index: 0;
+}
+
+/* Contenedor */
 .contenedor {
   position: relative;
   z-index: 1;
@@ -30,65 +26,63 @@ body {
   max-width: 700px;
   margin: auto;
   padding: 40px 0;
+}
 
-  .bio {
-    text-align: center;
-    margin-bottom: 40px;
+/* Bio */
+.bio {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-    .foto {
-      width: 150px;
-      height: auto;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border-radius: 100px;
-      margin-bottom: 20px;
-    }
+.bio .foto {
+  width: 150px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
 
-    .nombre {
-      margin-bottom: 5px;
-      font-size: 32px;
-    }
-    .decripcion {
-      font-size: 18px;
-    }
-  }
+.bio .nombre {
+  margin-bottom: 5px;
+  font-size: 32px;
+}
 
-  .links {
-    a {
-      color: black;
-      border: 3px solid black;
-      border-radius: 10px;
-      text-align: center;
-      display: block;
-      margin-bottom: 20px;
-      text-decoration: none;
-      text-transform: uppercase;
-      padding: 20px;
-      font-weight: 700;
-      transition: 0.2s ease all;
-      box-shadow: 
-      1px 1px 0px 0px black,
-      2px 2px 0px 0px black,
-      3px 3px 0px 0px black
-      ;
-      transform: translate(-5px -5px);
+.bio .descripcion {
+  font-size: 18px;
+}
 
-      &:hover{
-        color: #fff;
-        box-shadow: 0px 0px 0px;
-      }
+/* Links */
+.links a {
+  color: black;
+  border: 3px solid black;
+  border-radius: 10px;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px;
+  font-weight: 700;
+  transition: 0.2s ease all;
+  box-shadow: 
+    1px 1px 0px 0px black,
+    2px 2px 0px 0px black,
+    3px 3px 0px 0px black;
+}
 
-      &.youtube:hover {
-        background: #ff0000;
-      }
+.links a:hover {
+  color: #fff;
+  box-shadow: none;
+}
 
-      &.facebook:hover {
-        background: #1877f2;
-      }
+.links a.youtube:hover {
+  background: #ff0000;
+}
 
-      &.instagram:hover {
-        background: #c13584;
-      }
-    }
-  }
+.links a.facebook:hover {
+  background: #1877f2;
+}
+
+.links a.instagram:hover {
+  background: #c13584;
 }
